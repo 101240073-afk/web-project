@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="managerstyle.css">
+    <title>Welcome, Project Manager!</title>
+</head>
+
+<body>
+
+    <section class="side-bar">
+        <nav>
+            <ul>
+                <li><a href="#overview" class="active">Overview</a></li>
+                <li><a href="post-task.html">Post a Task</a></li>
+                <li><a href="manage-tasks.html">Manage Tasks</a></li>
+                <li><a href="manage-applications.html">Applications</a></li>
+                <li><a href="#profile">Organization Profile</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="main-content">
+        <h1>Welcome, Project Manager!</h1>
+        <p>
+            This is your dashboard where you can post new tasks,
+            manage your projects, review worker applications,
+            and monitor task progress.
+        </p>
+    </section>
+
+    <section class="stats-row">
+
+        <div class="stat-card">
+            <span class="stat-label">Posted Tasks</span>
+            <h3 class="stat-value">5</h3>
+            <span class="stat-subtext">Total tasks created</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-label">Active Tasks</span>
+            <h3 class="stat-value">2</h3>
+            <span class="stat-subtext">Currently in progress</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-label">Pending Applications</span>
+            <h3 class="stat-value">3</h3>
+            <span class="stat-subtext">Waiting for review</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-label">Completed Tasks</span>
+            <h3 class="stat-value">1</h3>
+            <span class="stat-subtext">Successfully completed</span>
+        </div>
+
+    </section>
+
+    <section class="middle-section">
+
+        <h2>Recent Posted Tasks</h2>
+
+        <div class="job-cards-container">
+
+            <div class="active-job-card">
+
+                <div class="job-header">
+                    <span class="badge active">In Progress</span>
+                    <span class="job-schedule">Deadline: Nov 20, 2026</span>
+                </div>
+
+                <h3>Foundation Crack Repair</h3>
+
+                <p class="job-meta">
+                    <strong>Organization:</strong> Beirut Rebuilding Initiative
+                </p>
+
+                <p class="job-meta">
+                    <strong>Location:</strong> Gemmayzeh, Block A •
+                    <strong>Trade:</strong> Masonry
+                </p>
+
+                <p class="job-description">
+                    Need experienced masons to stabilize and repair
+                    front wall foundation cracks.
+                </p>
+
+                <div class="job-actions">
+                    <button class="btn-primary">View Applications</button>
+                    <button class="btn-secondary">Manage Task</button>
+                </div>
+
+            </div>
+
+            <div class="active-job-card">
+
+                <div class="job-header">
+                    <span class="badge pending">Pending</span>
+                    <span class="job-schedule">Deadline: Nov 25, 2026</span>
+                </div>
+
+                <h3>Community Center Lighting Setup</h3>
+
+                <p class="job-meta">
+                    <strong>Organization:</strong> Local Development NGO
+                </p>
+
+                <p class="job-meta">
+                    <strong>Location:</strong> Mar Mikhael •
+                    <strong>Trade:</strong> Electrical
+                </p>
+
+                <p class="job-description">
+                    Install safety lighting and test main distribution
+                    boards in the community hall.
+                </p>
+
+                <div class="job-actions">
+                    <button class="btn-primary">View Applications</button>
+                    <button class="btn-secondary">Manage Task</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

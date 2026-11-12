@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="managerstyle.css">
+    <title>Manage Tasks - Work Link</title>
+</head>
+
+<body>
+    <section class="side-bar">
+        <nav>
+            <ul>
+                <li><a href="managerDash.html">Overview</a></li>
+                <li><a href="post-task.html">Post a Task</a></li>
+                <li><a href="manage-tasks.html" class="active">Manage Tasks</a></li>
+                <li><a href="manage-applications.html">Applications</a></li>
+                <li><a href="#profile">Organization Profile</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="main-content">
+        <h1>Manage My Tasks</h1>
+        <p>View your published tasks, monitor their progress, and update their status.</p>
+        <section class="filter-section">
+            <form>
+                <label for="filter-status">Task Status:</label>
+                <select id="filter-status">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <label for="filter-trade">Trade:</label>
+                <select id="filter-trade">
+                    <option value="all">All Trades</option>
+                    <option value="masonry">Masonry</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="plumbing">Plumbing</option>
+                    <option value="general">General Labor</option>
+                </select>
+                <button type="submit">Filter Tasks</button>
+            </form>
+        </section>
+
+        <section class="applications-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task Title</th>
+                        <th>Organization</th>
+                        <th>Location</th>
+                        <th>Workers</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Foundation Crack Repair</td>
+                        <td>Beirut Rebuilding Initiative</td>
+                        <td>Gemmayzeh, Block A</td>
+                        <td>2 / 3</td>
+                        <td><span class="status accepted">In Progress</span></td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Close</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Community Center Lighting Setup</td>
+                        <td>Local Development NGO</td>
+                        <td>Mar Mikhael</td>
+                        <td>0 / 2</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Close</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Main Breaker Panel Rewiring</td>
+                        <td>Urban Safe Group</td>
+                        <td>Hadath, St. Teres</td>
+                        <td>1 / 2</td>
+                        <td><span class="status accepted">In Progress</span></td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Close</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Debris Clearing & Sorting</td>
+                        <td>Municipal Support Team</td>
+                        <td>Beirut</td>
+                        <td>2 / 2</td>
+                        <td><span class="status accepted">Completed</span></td>
+                        <td><button type="button">View Details</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+
+</body>
+</html>

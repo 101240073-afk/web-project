@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Profile</title>
+</head>
+<body>
+
+    <div class="setup-container">
+        <header class="setup-header">
+            <h1>Set Up Your Worker Profile</h1>
+            <p>Tell employers about your specialized skills, experience, and availability so you can start applying for tasks.</p>
+        </header>
+
+        <form id="create-profile-form">
+            
+            <div class="form-section">
+                <h2>1. Personal & Contact Details</h2>
+                
+                <div class="input-row">
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" placeholder="e.g., Ahmad Mansour" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" placeholder="e.g., +961 70 123 456" required>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="form-group">
+                        <label for="city">City / Area *</label>
+                        <input type="text" id="city" placeholder="e.g., Beirut, Tripoli, Saida..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Years of Experience *</label>
+                        <input type="number" id="experience" min="0" max="50" placeholder="e.g., 3" required>
+                    </div>
+                </div>
+            </div>
+
+  
+            <div class="form-section">
+                <h2>2. Select Your Specialized Skills *</h2>
+                <p class="helper-text">Choose all trades you are qualified to work in:</p>
+                
+                <div class="skills-grid">
+                    <label class="skill-option">
+                        <input type="checkbox" name="skills" value="Masonry"> Masonry & Plastering
+                    </label>
+                    <label class="skill-option">
+                        <input type="checkbox" name="skills" value="Electrical"> Electrical Work
+                    </label>
+                    <label class="skill-option">
+                        <input type="checkbox" name="skills" value="Plumbing"> Plumbing
+                    </label>
+                    <label class="skill-option">
+                        <input type="checkbox" name="skills" value="General Labor"> General Labor & Clearing
+                    </label>
+                    <label class="skill-option">
+                        <input type="checkbox" name="skills" value="Carpentry"> Carpentry
+                    </label>
+                    <label class="skill-option">
+                        <input type="checkbox" name="skills" value="Painting"> Painting & Finishing
+                    </label>
+                </div>
+            </div>
+
+    
+            <div class="form-section">
+                <h2>3. Work Summary & Equipment</h2>
+                
+                <div class="form-group">
+                    <label for="bio">Short Bio / Past Experience</label>
+                    <textarea id="bio" rows="4" placeholder="Briefly describe the types of repair or construction tasks you have done..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="daily-rate">Expected Daily Rate ($ USD)</label>
+                    <input type="number" id="daily-rate" min="0" placeholder="e.g., 40">
+                </div>
+
+                <div class="form-group checkbox-inline">
+                    <input type="checkbox" id="has-tools">
+                    <label for="has-tools">I own my own basic tools & safety equipment</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Save Profile & Go to Dashboard</button>
+        </form>
+    </div>
+
+
+</body>
+</html>

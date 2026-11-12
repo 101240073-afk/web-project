@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="managerstyle.css">
+    <title>Post a Task - Work Link</title>
+</head>
+
+<body>
+    <section class="side-bar">
+        <nav>
+            <ul>
+                <li><a href="managerDash.html">Overview</a></li>
+                <li><a href="post-task.html" class="active">Post a Task</a></li>
+                <li><a href="manage-tasks.html">Manage Tasks</a></li>
+                <li><a href="manage-applications.html">Applications</a></li>
+                <li><a href="#profile">Organization Profile</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="main-content">
+        <h1>Post a New Task</h1>
+        <p>Create a new job opportunity and provide the details workers need before applying.</p>
+        <section class="form-container">
+            <form id="post-task-form">
+                <div class="form-section">
+                    <h2>1. Task Information</h2>
+                    <div class="form-group">
+                        <label for="task-title">Task Title *</label>
+                        <input type="text" id="task-title" placeholder="e.g., Foundation Crack Repair" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-description">Task Description *</label>
+                        <textarea id="task-description" rows="4" placeholder="Describe the work that needs to be completed..." required></textarea>
+                    </div>
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="task-trade">Required Trade *</label>
+                            <select id="task-trade" required>
+                                <option value="">Select a Trade</option>
+                                <option value="Masonry">Masonry & Plastering</option>
+                                <option value="Electrical">Electrical Work</option>
+                                <option value="Plumbing">Plumbing</option>
+                                <option value="General Labor">General Labor</option>
+                                <option value="Carpentry">Carpentry</option>
+                                <option value="Painting">Painting & Finishing</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="workers-needed">Workers Needed *</label>
+                            <input type="number" id="workers-needed" min="1" placeholder="e.g., 3" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>2. Location & Schedule</h2>
+                    <div class="form-group">
+                        <label for="location">Task Location *</label>
+                        <input type="text" id="location" placeholder="e.g., Gemmayzeh, Block A" required>
+                    </div>
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="start-date">Start Date *</label>
+                            <input type="date" id="start-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deadline">Deadline *</label>
+                            <input type="date" id="deadline" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>3. Budget & Priority</h2>
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="budget">Daily Budget ($ USD)</label>
+                            <input type="number" id="budget" min="0" placeholder="e.g., 40">
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Task Urgency *</label>
+                            <select id="urgency" required>
+                                <option value="">Select Priority</option>
+                                <option value="High">High Priority</option>
+                                <option value="Medium">Medium Priority</option>
+                                <option value="Low">Low Priority</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Publish Task</button>
+            </form>
+        </section>
+    </section>
+
+</body>
+</html>

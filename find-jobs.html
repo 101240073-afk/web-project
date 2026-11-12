@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Tasks - Work Link</title>
+</head>
+<body>
+
+    <section class="side-bar">
+        <nav>
+            <ul>
+                <li><a href="workerDash.html">Overview</a></li>
+                <li><a href="find-jobs.html" class="active">Find Jobs</a></li>
+                <li><a href="applications.html">My Applications</a></li>
+                <li><a href="#earnings">Earnings</a></li>
+                <li><a href="workerProfile.html">Profile</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </section>
+
+
+    <section class="main-content">
+        <h1>Find Available Tasks</h1>
+        <p>Browse open rebuilding tasks and filter by your trade, location, or urgency.</p>
+
+        <section class="filter-section">
+            <form>
+                <label for="filter-trade">Trade / Skill:</label>
+                <select id="filter-trade">
+                    <option value="all">All Trades</option>
+                    <option value="masonry">Masonry & Plastering</option>
+                    <option value="electrical">Electrical Work</option>
+                    <option value="plumbing">Plumbing</option>
+                    <option value="general">General Labor</option>
+                </select>
+
+                <label for="filter-location">Location:</label>
+                <input type="text" id="filter-location" placeholder="e.g., Beirut, Hamra...">
+
+                <label for="filter-urgency">Urgency:</label>
+                <select id="filter-urgency">
+                    <option value="all">All</option>
+                    <option value="high">High Priority</option>
+                    <option value="medium">Medium Priority</option>
+                </select>
+
+                <button type="submit">Filter Tasks</button>
+            </form>
+        </section>
+
+        <section class="task-feed">
+            <div class="task-card">
+                <span class="badge high">High Priority</span>
+                <h3>Foundation Crack Repair</h3>
+                <p><strong>Organization:</strong> Beirut Rebuilding Initiative</p>
+                <p><strong>Location:</strong> Gemmayzeh, Block A • <strong>Trade:</strong> Masonry</p>
+                <p>Need experienced masons to stabilize and repair front wall foundation cracks.</p>
+                <button type="button">Apply Now</button>
+            </div>
+
+            <div class="task-card">
+                <span class="badge medium">Medium Priority</span>
+                <h3>Community Center Lighting Setup</h3>
+                <p><strong>Organization:</strong> Local Development NGO</p>
+                <p><strong>Location:</strong> Mar Mikhael • <strong>Trade:</strong> Electrical</p>
+                <p>Install safety lighting and test main distribution boards in the community hall.</p>
+                <button type="button">Apply Now</button>
+            </div>
+        </section>
+    </section>
+
+</body>
+</html>

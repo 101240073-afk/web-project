@@ -1,3 +1,4 @@
+/* main color variables*/
 :root {
     --color-midnight-slate: #2E3D50;
     --color-fog-steel: #8894A2;
@@ -5,7 +6,6 @@
     --color-dune-sand: #D7B791;
     --color-burnt-copper: #C4762B;
 
-  
     --primary: var(--color-midnight-slate);
     --primary-hover: #212c3a;
     --secondary: var(--color-fog-steel);
@@ -14,7 +14,7 @@
     --surface-warm: var(--color-soft-cream);
     --border-warm: var(--color-dune-sand);
 
- 
+    /* colors for the job status badges */
     --status-active-bg: rgba(46, 61, 80, 0.12);
     --status-active-text: #2E3D50;
     --status-pending-bg: rgba(215, 183, 145, 0.35);
@@ -24,31 +24,33 @@
     --status-rejected-bg: rgba(136, 148, 162, 0.2);
     --status-rejected-text: #4a5562;
 
-
+    /* background and text colors */
     --bg-main: #f6f4ef;
     --bg-card: #ffffff;
     --text-main: #2E3D50;
     --text-muted: #5f6c7b;
     --border-color: #e2dcd0;
 
-  
+    /* roundness and hover animation speed */
     --radius: 8px;
     --transition: all 0.2s ease-in-out;
 }
 
-
+/* reset default browser margins and padding */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* stop horizontal scrolling on small screens */
 html, body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
 }
 
+/* global body styling and layout base */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: var(--bg-main);
@@ -58,7 +60,7 @@ body {
     min-height: 100vh;
 }
 
-
+/* left sidebar menu container */
 .side-bar, .sidebar {
     width: 250px;
     background-color: var(--primary);
@@ -70,6 +72,7 @@ body {
     box-shadow: 4px 0 14px rgba(46, 61, 80, 0.08);
 }
 
+/* heading title inside the sidebar */
 .side-bar h2, .sidebar h2 {
     font-size: 1.25rem;
     padding: 0 24px;
@@ -78,11 +81,13 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* remove bullet points from sidebar navigation list */
 .side-bar nav ul, .sidebar ul {
     list-style: none;
     width: 100%;
 }
 
+/* individual sidebar navigation links */
 .side-bar nav ul li a, .sidebar li a {
     display: flex;
     align-items: center;
@@ -96,6 +101,7 @@ body {
     word-break: break-word;
 }
 
+/* highlight sidebar link when hovered or currently active */
 .side-bar nav ul li a:hover,
 .side-bar nav ul li a.active,
 .sidebar li a:hover,
@@ -105,6 +111,7 @@ body {
     border-left-color: var(--accent);
 }
 
+/* grid layout for dashboard pages (excludes login/register/profile setup) */
 body:not(:has(.auth-container)):not(:has(.setup-container)) {
     display: grid;
     grid-template-columns: 250px minmax(0, 1fr);
@@ -116,6 +123,7 @@ body:not(:has(.auth-container)):not(:has(.setup-container)) {
     align-items: start;
 }
 
+/* keep sidebar stuck on the left side while scrolling down */
 .side-bar, .sidebar {
     grid-area: sidebar;
     min-height: 100vh;
@@ -123,6 +131,7 @@ body:not(:has(.auth-container)):not(:has(.setup-container)) {
     top: 0;
 }
 
+/* main content header wrapper area */
 .main-content {
     grid-area: header;
     width: 100%;
@@ -130,7 +139,7 @@ body:not(:has(.auth-container)):not(:has(.setup-container)) {
     padding: 36px 40px 16px 40px;
 }
 
-
+/* make sure inner sections fill the available width nicely */
 .main-content .stats-row,
 .main-content .middle-section,
 .main-content .filter-section,
@@ -140,6 +149,7 @@ body:not(:has(.auth-container)):not(:has(.setup-container)) {
     max-width: 100%;
 }
 
+/* place stats row in its grid spot on workerDash */
 body > .stats-row {
     grid-area: stats;
     padding: 0 40px 24px 40px;
@@ -147,6 +157,7 @@ body > .stats-row {
     max-width: 100%;
 }
 
+/* place middle section tasks in their grid spot on workerDash */
 body > .middle-section {
     grid-area: middle;
     padding: 0 40px 40px 40px;
@@ -154,6 +165,7 @@ body > .middle-section {
     max-width: 100%;
 }
 
+/* main title heading typography */
 .main-content h1 {
     font-size: 1.75rem;
     color: var(--primary);
@@ -161,13 +173,14 @@ body > .middle-section {
     overflow-wrap: break-word;
 }
 
+/* introductory description paragraph under titles */
 .main-content p {
     color: var(--text-muted);
     margin-bottom: 20px;
     font-size: 0.98rem;
 }
 
-
+/* center the box for login, register, and profile setup pages */
 body:has(.auth-container), body:has(.setup-container) {
     display: flex;
     justify-content: center;
@@ -176,6 +189,7 @@ body:has(.auth-container), body:has(.setup-container) {
     padding: 24px 16px;
 }
 
+/* white card box for authentication and profile forms */
 .auth-container, .setup-container {
     background: var(--bg-card);
     padding: 36px;
@@ -189,27 +203,32 @@ body:has(.auth-container), body:has(.setup-container) {
     border-bottom: 1px solid var(--border-color);
 }
 
+/* profile setup form */
 .setup-container {
     max-width: 720px;
 }
 
+/* header title area inside auth and setup forms */
 .setup-header, .auth-container h2 {
     margin-bottom: 24px;
     border-bottom: 2px solid var(--color-soft-cream);
     padding-bottom: 12px;
 }
 
+/* main heading inside auth and setup headers */
 .auth-container h2, .setup-header h1 {
     font-size: 1.5rem;
     color: var(--primary);
 }
 
+/* subtitle text inside setup header */
 .setup-header p {
     font-size: 0.9rem;
     color: var(--text-muted);
     margin-top: 4px;
 }
 
+/* stack form fields vertically with consistent spacing */
 form {
     display: flex;
     flex-direction: column;
@@ -217,6 +236,7 @@ form {
     width: 100%;
 }
 
+/* individual grouped field sections in the profile form */
 .form-section {
     background: #fcfaf6;
     padding: 20px;
@@ -225,18 +245,21 @@ form {
     border: 1px solid var(--color-dune-sand);
 }
 
+/* heading titles inside form sections */
 .form-section h2 {
     font-size: 1.05rem;
     color: var(--primary);
     margin-bottom: 12px;
 }
 
+/* helper description text under form section titles */
 .helper-text {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 12px;
 }
 
+/* form input field labels */
 label {
     font-size: 0.88rem;
     font-weight: 600;
@@ -245,6 +268,7 @@ label {
     margin-bottom: 6px;
 }
 
+/* text fields, email boxes, password inputs, dropdowns, and textareas */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -263,31 +287,35 @@ textarea {
     transition: var(--transition);
 }
 
+/* highlight input border when clicked or focused */
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(196, 118, 43, 0.18);
 }
 
+/* place two form inputs side by side in a row */
 .input-row {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
 }
 
+/* single form group wrapper container */
 .form-group {
     display: flex;
     flex-direction: column;
     min-width: 0;
 }
 
-
+/* grid layout for the trade skill checkboxes */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 10px;
 }
 
+/* clickable card wrapper around each skill checkbox */
 .skill-option, .checkbox-inline {
     display: flex;
     align-items: center;
@@ -301,11 +329,13 @@ input:focus, select:focus, textarea:focus {
     transition: var(--transition);
 }
 
+/* hover effect on skill option boxes */
 .skill-option:hover {
     border-color: var(--accent);
     background-color: var(--color-soft-cream);
 }
 
+/* actual checkbox input styling */
 .checkbox-inline input, .skill-option input {
     accent-color: var(--accent);
     width: 16px;
@@ -313,12 +343,13 @@ input:focus, select:focus, textarea:focus {
     flex-shrink: 0;
 }
 
+/* label text next to inline checkboxes */
 .checkbox-inline label {
     margin-bottom: 0;
     font-weight: normal;
 }
 
-
+/* primary action buttons (submit, login, register, filter) */
 .btn-auth, .btn-submit, .filter-section button, button[type="submit"] {
     background-color: var(--primary);
     color: var(--color-soft-cream);
@@ -332,12 +363,14 @@ input:focus, select:focus, textarea:focus {
     text-align: center;
 }
 
+/* hover state for primary action buttons */
 .btn-auth:hover, .btn-submit:hover, .filter-section button:hover, button[type="submit"]:hover {
     background-color: var(--accent);
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(196, 118, 43, 0.25);
 }
 
+/* footer text link container below auth forms */
 .auth-link {
     text-align: center;
     margin-top: 16px;
@@ -345,23 +378,26 @@ input:focus, select:focus, textarea:focus {
     color: var(--text-muted);
 }
 
+/* clickable text link inside auth footer */
 .auth-link a {
     color: var(--accent);
     text-decoration: none;
     font-weight: 600;
 }
 
+/* underline link on hover */
 .auth-link a:hover {
     text-decoration: underline;
 }
 
-
+/* top metric stat cards row layout */
 .stats-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 18px;
 }
 
+/* individual stat card box */
 .stat-card {
     background: var(--bg-card);
     padding: 20px;
@@ -373,6 +409,7 @@ input:focus, select:focus, textarea:focus {
     min-width: 0;
 }
 
+/* decorative colored strip on the left edge of each stat card */
 .stat-card::before {
     content: '';
     position: absolute;
@@ -383,10 +420,12 @@ input:focus, select:focus, textarea:focus {
     background-color: var(--primary);
 }
 
+/* different accent colors for cards 2, 3, and 4 */
 .stat-card:nth-child(2)::before { background-color: var(--color-dune-sand); }
 .stat-card:nth-child(3)::before { background-color: var(--accent); }
 .stat-card:nth-child(4)::before { background-color: var(--secondary); }
 
+/* small uppercase title label on stat card */
 .stat-label {
     font-size: 0.82rem;
     color: var(--text-muted);
@@ -395,6 +434,7 @@ input:focus, select:focus, textarea:focus {
     letter-spacing: 0.5px;
 }
 
+/* large number value displayed on stat card */
 .stat-value {
     font-size: 1.75rem;
     font-weight: 700;
@@ -402,19 +442,21 @@ input:focus, select:focus, textarea:focus {
     margin: 6px 0 4px 0;
 }
 
+/* small secondary context note under stat value */
 .stat-subtext {
     font-size: 0.8rem;
     color: var(--accent);
     font-weight: 500;
 }
 
-
+/* section header for tasks and assigned jobs */
 .middle-section h2 {
     font-size: 1.25rem;
     color: var(--primary);
     margin-bottom: 16px;
 }
 
+/* grid container for job cards and task feeds */
 .job-cards-container, .task-feed {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -422,6 +464,7 @@ input:focus, select:focus, textarea:focus {
     width: 100%;
 }
 
+/* individual task or active job card container */
 .active-job-card, .task-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -436,12 +479,14 @@ input:focus, select:focus, textarea:focus {
     overflow-wrap: break-word;
 }
 
+/* subtle lift effect when hovering over job cards */
 .active-job-card:hover, .task-card:hover {
     border-color: var(--color-dune-sand);
     box-shadow: 0 8px 20px rgba(46, 61, 80, 0.08);
     transform: translateY(-2px);
 }
 
+/* header row inside job cards containing badges and dates */
 .job-header {
     display: flex;
     flex-wrap: wrap;
@@ -451,6 +496,7 @@ input:focus, select:focus, textarea:focus {
     margin-bottom: 12px;
 }
 
+/* small pill status badges and priority tags */
 .badge, .status {
     display: inline-block;
     font-size: 0.75rem;
@@ -462,44 +508,52 @@ input:focus, select:focus, textarea:focus {
     width: fit-content;
 }
 
+/* styling for active tasks and accepted application statuses */
 .badge.active, .status.accepted {
     background-color: var(--status-active-bg);
     color: var(--status-active-text);
 }
 
+/* styling for pending status items */
 .badge.pending, .status.pending {
     background-color: var(--status-pending-bg);
     color: var(--status-pending-text);
 }
 
+/* styling for high urgency badges */
 .badge.high {
     background-color: var(--status-high-bg);
     color: var(--status-high-text);
 }
 
+/* styling for medium urgency badges */
 .badge.medium {
     background-color: var(--color-soft-cream);
     color: var(--accent);
     border: 1px solid var(--color-dune-sand);
 }
 
+/* styling for rejected status items */
 .status.rejected {
     background-color: var(--status-rejected-bg);
     color: var(--status-rejected-text);
 }
 
+/* schedule date and location metadata text inside cards */
 .job-schedule, .job-meta {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 6px;
 }
 
+/* main heading title inside job or task cards */
 .active-job-card h3, .task-card h3 {
     font-size: 1.15rem;
     color: var(--primary);
     margin: 6px 0 8px 0;
 }
 
+/* descriptive paragraph text inside job cards */
 .job-description {
     font-size: 0.9rem;
     color: var(--text-muted);
@@ -507,12 +561,14 @@ input:focus, select:focus, textarea:focus {
     line-height: 1.5;
 }
 
+/* button row container at the bottom of cards */
 .job-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
+/* primary button style inside cards */
 .btn-primary, .task-card button {
     background-color: var(--primary);
     color: var(--color-soft-cream);
@@ -525,11 +581,13 @@ input:focus, select:focus, textarea:focus {
     transition: var(--transition);
 }
 
+/* hover state for card primary buttons */
 .btn-primary:hover, .task-card button:hover {
     background-color: var(--accent);
     color: #ffffff;
 }
 
+/* secondary button style inside cards */
 .btn-secondary {
     background-color: var(--color-soft-cream);
     color: var(--primary);
@@ -542,11 +600,13 @@ input:focus, select:focus, textarea:focus {
     transition: var(--transition);
 }
 
+/* hover state for secondary buttons */
 .btn-secondary:hover {
     background-color: var(--color-dune-sand);
     color: var(--primary);
 }
 
+/* search and filter section box on the find jobs page */
 .filter-section {
     background: var(--bg-card);
     padding: 20px;
@@ -555,6 +615,7 @@ input:focus, select:focus, textarea:focus {
     margin-bottom: 24px;
 }
 
+/* grid layout for inputs inside the filter form */
 .filter-section form {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -562,7 +623,7 @@ input:focus, select:focus, textarea:focus {
     align-items: end;
 }
 
-
+/* container wrapper so tables can scroll horizontally on small screens */
 .applications-container {
     background: var(--bg-card);
     border-radius: var(--radius);
@@ -573,6 +634,7 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 2px 6px rgba(46, 61, 80, 0.04);
 }
 
+/* base data table styling */
 table {
     width: 100%;
     min-width: 640px;
@@ -581,6 +643,7 @@ table {
     font-size: 0.92rem;
 }
 
+/* table header column cells */
 th {
     background-color: var(--primary);
     color: var(--color-soft-cream);
@@ -592,20 +655,24 @@ th {
     white-space: nowrap;
 }
 
+/* table body data cells */
 td {
     padding: 14px 18px;
     border-bottom: 1px solid var(--border-color);
     color: var(--text-main);
 }
 
+/* remove bottom border from the final table row */
 tr:last-child td {
     border-bottom: none;
 }
 
+/* subtle background highlight when hovering over table rows */
 tr:hover td {
     background-color: rgba(254, 238, 205, 0.35);
 }
 
+/* action buttons inside table cells */
 table button {
     background-color: var(--color-soft-cream);
     color: var(--primary);
@@ -619,13 +686,14 @@ table button {
     white-space: nowrap;
 }
 
+/* hover state for table action buttons */
 table button:hover {
     background-color: var(--accent);
     color: #ffffff;
     border-color: var(--accent);
 }
 
-
+/* media query for tablets and medium screens (992px wide or smaller) */
 @media (max-width: 992px) {
     body:not(:has(.auth-container)):not(:has(.setup-container)) {
         grid-template-columns: 210px minmax(0, 1fr);
@@ -646,13 +714,14 @@ table button:hover {
     }
 }
 
-
+/* media query for mobile phones and small screens (768px wide or smaller) */
 @media (max-width: 768px) {
     body:not(:has(.auth-container)):not(:has(.setup-container)) {
         display: flex;
         flex-direction: column;
     }
 
+    /* turn sidebar into a horizontal navigation bar at the top */
     .side-bar, .sidebar {
         width: 100%;
         min-height: auto;
@@ -698,6 +767,7 @@ table button:hover {
         padding: 24px 18px;
     }
 
+    /* force all multi-column grids to single column on mobile */
     .input-row,
     .skills-grid,
     .filter-section form,

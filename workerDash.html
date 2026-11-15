@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="workerstyle.css">
+    <script src="workerDash.js" defer></script>
     <title>Welcome, Worker!</title>
 </head>
 
@@ -54,37 +56,54 @@
     </section>
 
     <section class="middle-section">
-    <h2>My Assigned Tasks</h2>
-    
-    <div class="job-cards-container">
-        <div class="active-job-card">
-            <div class="job-header">
-                <span class="badge active">In Progress</span>
-                <span class="job-schedule">Today • 8:00 AM - 4:00 PM</span>
-            </div>
-            <h3>Exterior Wall Masonry & Plastering</h3>
-            <p class="job-meta"><strong>Site:</strong> Hart Hreik, Block B • <strong>Trade:</strong> Masonry</p>
-            <p class="job-description">Repair structural cracks and apply weather-resistant plaster to the ground floor facade.</p>
-            <div class="job-actions">
-                <button class="btn-primary">Mark Task Complete</button>
-                <button class="btn-secondary">Site Details</button>
-            </div>
-        </div>
+        <h2>My Assigned Tasks</h2>
 
-        <div class="active-job-card">
-            <div class="job-header">
-                <span class="badge pending">Scheduled</span>
-                <span class="job-schedule">Tomorrow • 9:00 AM</span>
+        <div class="job-cards-container">
+            <div class="active-job-card">
+                <div class="job-header">
+                    <span class="badge-active">In Progress</span>
+                    <span class="job-schedule">Today • 8:00 AM - 4:00 PM</span>
+                </div>
+                <h3>Exterior Wall Masonry & Plastering</h3>
+                <p class="job-meta"><strong>Site:</strong> Hart Hreik, Block B • <strong>Trade:</strong> Masonry</p>
+                <p class="job-description">Repair structural cracks and apply weather-resistant plaster to the ground
+                    floor facade.</p>
+                <div class="job-actions">
+                    <button class="btn-primary">Mark Task Complete</button>
+                    <button class="btn-secondary">Site Details</button>
+                    <div class="site-modal hidden">
+                        <div class="site-modal-content">
+                            <h2>Site Details</h2>
+                            <img src="structural cracks.jpg" alt="Construction Site Picture">
+                            <button class="btn-close">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h3>Main Breaker Panel Rewiring</h3>
-            <p class="job-meta"><strong>Site:</strong> Hadath, St. Teres • <strong>Trade:</strong> Electrical</p>
-            <p class="job-description">Inspect damaged circuits, replace main breaker box, and test apartment wiring safety.</p>
-            <div class="job-actions">
-                <button class="btn-primary">Start Task</button>
-                <button class="btn-secondary">Site Details</button>
+
+            <div class="active-job-card">
+                <div class="job-header">
+                    <span class="badge-pending">Scheduled</span>
+                    <span class="job-schedule">Tomorrow • 9:00 AM</span>
+                </div>
+                <h3>Main Breaker Panel Rewiring</h3>
+                <p class="job-meta"><strong>Site:</strong> Hadath, St. Teres • <strong>Trade:</strong> Electrical</p>
+                <p class="job-description">Inspect damaged circuits, replace main breaker box, and test apartment wiring
+                    safety.</p>
+                <div class="job-actions">
+                    <button class="btn-primary">Start Task</button>
+                    <button class="btn-secondary">Site Details</button>
+                    <div class="site-modal hidden">
+                        <div class="site-modal-content">
+                            <h2>Site Details</h2>
+                            <img src="wires site.jpg" alt="Construction Site Picture">
+                            <button class="btn-close">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </body>
+
 </html>

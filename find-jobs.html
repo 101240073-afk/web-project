@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="workerstyle.css">
+    <script src="findJobsScript.js" defer></script>
     <title>Find Tasks - Work Link</title>
 </head>
+
 <body>
 
     <section class="side-bar">
@@ -31,10 +34,10 @@
                 <label for="filter-trade">Trade / Skill:</label>
                 <select id="filter-trade">
                     <option value="all">All Trades</option>
-                    <option value="masonry">Masonry & Plastering</option>
-                    <option value="electrical">Electrical Work</option>
-                    <option value="plumbing">Plumbing</option>
-                    <option value="general">General Labor</option>
+                    <option value="Masonry">Masonry & Plastering</option>
+                    <option value="Electrical">Electrical Work</option>
+                    <option value="Plumbing">Plumbing</option>
+                    <option value="General Labor">General Labor</option>
                 </select>
 
                 <label for="filter-location">Location:</label>
@@ -43,8 +46,8 @@
                 <label for="filter-urgency">Urgency:</label>
                 <select id="filter-urgency">
                     <option value="all">All</option>
-                    <option value="high">High Priority</option>
-                    <option value="medium">Medium Priority</option>
+                    <option value="High Priority">High Priority</option>
+                    <option value="Medium Priority">Medium Priority</option>
                 </select>
 
                 <button type="submit">Filter Tasks</button>
@@ -56,7 +59,15 @@
                 <span class="badge high">High Priority</span>
                 <h3>Foundation Crack Repair</h3>
                 <p><strong>Organization:</strong> Beirut Rebuilding Initiative</p>
-                <p><strong>Location:</strong> Gemmayzeh, Block A • <strong>Trade:</strong> Masonry</p>
+
+                <p>
+                    <strong>Location:</strong>
+                    <span class="task-location">Gemmayzeh, Block A</span>
+                    •
+                    <strong>Trade:</strong>
+                    <span class="task-trade">Masonry</span>
+                </p>
+
                 <p>Need experienced masons to stabilize and repair front wall foundation cracks.</p>
                 <button type="button">Apply Now</button>
             </div>
@@ -65,7 +76,15 @@
                 <span class="badge medium">Medium Priority</span>
                 <h3>Community Center Lighting Setup</h3>
                 <p><strong>Organization:</strong> Local Development NGO</p>
-                <p><strong>Location:</strong> Mar Mikhael • <strong>Trade:</strong> Electrical</p>
+
+                <p>
+                    <strong>Location:</strong>
+                    <span class="task-location">Mar Mikhael</span>
+                    •
+                    <strong>Trade:</strong>
+                    <span class="task-trade">Electrical</span>
+                </p>
+
                 <p>Install safety lighting and test main distribution boards in the community hall.</p>
                 <button type="button">Apply Now</button>
             </div>
@@ -73,4 +92,5 @@
     </section>
 
 </body>
+
 </html>

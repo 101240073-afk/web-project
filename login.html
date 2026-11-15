@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="workerstyle.css">
+    <script src="loginScript.js" defer></script>
     <title>Login</title>
 </head>
 
@@ -17,13 +18,15 @@
         <form class="auth-form">
 
             <label>Email</label>
-            <input type="email" placeholder="Enter your email">
+            <input type="email" placeholder="Enter your email" id="loginEmail">
 
             <label>Password</label>
-            <input type="password" placeholder="Enter password">
-
+            <input type="password" placeholder="Enter password" id="loginPassword">
+            
+            <p id="loginMessage"></p>
             <button type="submit" class="btn-auth">Login</button>
 
+           
             <p class="auth-link">
                 Don't have an account?
                 <a href="register.html">Register</a>

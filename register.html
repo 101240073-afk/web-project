@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="workerstyle.css">
+    <script src="registerScript.js" defer></script>
     <title>Register</title>
 </head>
 
@@ -16,22 +17,24 @@
         <form class="register-form">
 
             <label>Name</label>
-            <input type="text" placeholder="Enter your name">
+            <input type="text" placeholder="Enter your name" id="registerName">
 
             <label>Email</label>
-            <input type="email" placeholder="Enter your email">
+            <input type="email" placeholder="Enter your email" id="registerEmail">
 
             <label>Password</label>
-            <input type="password" placeholder="Enter password">
+            <input type="password" placeholder="Enter password" id="registerPassword">
 
             <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm password">
+            <input type="password" placeholder="Confirm password" id="registerConfirmPassword">
 
             <label for="role">Role</label>
             <select id="role">
                 <option value="worker">Worker</option>
                 <option value="project-manager">Project Manager</option>
             </select>
+
+            <p id="registerMessage"></p>
 
             <button type="submit" class="btn-auth">Register</button>
 

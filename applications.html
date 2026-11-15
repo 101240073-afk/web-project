@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="workerstyle.css">
+    <script src="applications.js" defer></script>
     <title>My Applications - Work Link</title>
 </head>
+
 <body>
 
     <section class="side-bar">
@@ -37,32 +40,46 @@
                         <th>Action</th>
                     </tr>
                 </thead>
+
                 <tbody>
+
                     <tr>
-                        <td>Exterior Wall Masonry & Plastering</td>
-                        <td>Beirut Rebuilding Initiative</td>
-                        <td>2026-10-24</td>
-                        <td><span class="status accepted">Accepted</span></td>
-                        <td><button>View Details</button></td>
+                        <td class="application-title">Exterior Wall Masonry & Plastering</td>
+                        <td class="application-organization">Beirut Rebuilding Initiative</td>
+                        <td class="application-date">2026-10-24</td>
+                        <td class="application-status">
+                            <span class="status accepted">Accepted</span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn-details">View Details</button>
+                        </td>
                     </tr>
+
                     <tr>
                         <td>Main Breaker Panel Rewiring</td>
                         <td>Urban Safe Group</td>
                         <td>2026-10-25</td>
                         <td><span class="status pending">Pending Review</span></td>
-                        <td><button>Withdraw</button></td>
+                        <td>
+                            <button type="button" class="btn-withdraw">Withdraw</button>
+                        </td>
                     </tr>
+
                     <tr>
                         <td>Debris Clearing & Sorting</td>
                         <td>Municipal Support Team</td>
                         <td>2026-10-20</td>
                         <td><span class="status rejected">Rejected</span></td>
-                        <td><button>Dismiss</button></td>
+                        <td>
+                            <button type="button" class="btn-dismiss">Dismiss</button>
+                        </td>
                     </tr>
+
                 </tbody>
             </table>
         </section>
     </section>
 
 </body>
+
 </html>

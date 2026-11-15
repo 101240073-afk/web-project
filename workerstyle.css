@@ -945,7 +945,7 @@ body.landing-page {
 
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .site-modal {

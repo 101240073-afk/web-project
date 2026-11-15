@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="managerstyle.css">
+    <script src="manageTasks.js" defer></script>
     <title>Manage Tasks - Work Link</title>
 </head>
 
 <body>
-    <section class="side-bar">
+    <section class="dashboard-sidebar">
         <nav>
             <ul>
                 <li><a href="managerDash.html">Overview</a></li>
                 <li><a href="post-task.html">Post a Task</a></li>
-                <li><a href="manage-tasks.html" class="active">Manage Tasks</a></li>
+                <li><a href="manage-tasks.html" class="selected">Manage Tasks</a></li>
                 <li><a href="manage-applications.html">Applications</a></li>
-                <li><a href="#profile">Organization Profile</a></li>
                 <li><a href="login.html">Logout</a></li>
             </ul>
         </nav>
     </section>
 
-    <section class="main-content">
+    <section class="welcome-section">
         <h1>Manage My Tasks</h1>
         <p>View your published tasks, monitor their progress, and update their status.</p>
-        <section class="filter-section">
+
+        <section class="task-filters">
             <form>
                 <label for="filter-status">Task Status:</label>
                 <select id="filter-status">
@@ -41,11 +42,11 @@
                     <option value="plumbing">Plumbing</option>
                     <option value="general">General Labor</option>
                 </select>
-                <button type="submit">Filter Tasks</button>
+                <button type="button" id="filter-button">Filter Tasks</button>
             </form>
         </section>
 
-        <section class="applications-container">
+        <section class="tasks-list">
             <table>
                 <thead>
                     <tr>
@@ -58,51 +59,63 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="task-row" data-status="progress" data-trade="masonry">
                         <td>Foundation Crack Repair</td>
                         <td>Beirut Rebuilding Initiative</td>
                         <td>Gemmayzeh, Block A</td>
                         <td>2 / 3</td>
-                        <td><span class="status accepted">In Progress</span></td>
+                        <td><span class="task-status status-accepted">In Progress</span></td>
                         <td>
-                            <button type="button">Edit</button>
-                            <button type="button">Close</button>
+                            <button type="button" class="edit-task">Edit</button>
+                            <button type="button" class="close-task">Close</button>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="task-row" data-status="pending" data-trade="electrical">
                         <td>Community Center Lighting Setup</td>
                         <td>Local Development NGO</td>
                         <td>Mar Mikhael</td>
                         <td>0 / 2</td>
-                        <td><span class="status pending">Pending</span></td>
+                        <td><span class="task-status status-pending">Pending</span></td>
                         <td>
                             <button type="button">Edit</button>
-                            <button type="button">Close</button>
+                            <button type="button" class="close-task">Close</button>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="task-row" data-status="progress" data-trade="electrical">
                         <td>Main Breaker Panel Rewiring</td>
                         <td>Urban Safe Group</td>
                         <td>Hadath, St. Teres</td>
                         <td>1 / 2</td>
-                        <td><span class="status accepted">In Progress</span></td>
+                        <td><span class="task-status status-accepted">In Progress</span></td>
                         <td>
                             <button type="button">Edit</button>
-                            <button type="button">Close</button>
+                            <button type="button" class="close-task">Close</button>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="task-row" data-status="completed" data-trade="general">
                         <td>Debris Clearing & Sorting</td>
                         <td>Municipal Support Team</td>
                         <td>Beirut</td>
                         <td>2 / 2</td>
-                        <td><span class="status accepted">Completed</span></td>
+                        <td><span class="task-status status-accepted">Completed</span></td>
                         <td><button type="button">View Details</button></td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </section>
+
+    <div class="modal hidden" id="close-modal">
+        <div class="modal-content">
+            <h2>Close Task?</h2>
+            <p>Are you sure you want to close this task?</p>
+
+            <div class="modal-buttons">
+                <button type="button" id="cancel-close">Cancel</button>
+                <button type="button" id="confirm-close">Close Task</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

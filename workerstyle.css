@@ -983,3 +983,164 @@ body.landing-page {
     display: block;
     border-radius: 8px;
 }
+.apply-page {
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+
+.apply-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    color: var(--color-dune-sand);
+}
+
+.apply-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.apply-subtitle {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.apply-heading h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.apply-heading p {
+    line-height: 1.6;
+}
+
+
+.selected-job {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(46, 61, 80, 0.04);
+}
+
+.selected-job h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.selected-job h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.selected-job p {
+    margin-top: 8px;
+}
+
+
+.application-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 35px;
+    box-shadow: 0 2px 8px rgba(46, 61, 80, 0.04);
+}
+
+.application-form h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    margin-bottom: 9px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-dune-sand);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.application-form .btn-primary {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .apply-page {
+        padding: 30px 15px;
+    }
+
+    .apply-heading h1 {
+        font-size: 28px;
+    }
+
+    .application-form {
+        padding: 22px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+}
+
+body.apply-page-body:not(:has(.auth-container)):not(:has(.setup-container)):not(.landing-page) {
+    display: block;
+    min-height: 100vh;
+}
+
+.apply-page {
+    width: 100%;
+    min-height: 100vh;
+}

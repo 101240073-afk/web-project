@@ -29,7 +29,7 @@ filterForm.addEventListener("submit", function(e) {
         }
         else {
 
-            task.classList.add("hidden");
+            task.classList.add("Jhidden");
 
         }
 

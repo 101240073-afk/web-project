@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="managerstyle.css">
-    <title>Manage Applications - Work Link</title>
+    <script src="manageApplications.js" defer></script>
+    <title>Manage Applications</title>
 </head>
 
 <body>
-    <section class="side-bar">
+    <section class="dashboard-sidebar">
         <nav>
             <ul>
                 <li><a href="managerDash.html">Overview</a></li>
                 <li><a href="post-task.html">Post a Task</a></li>
                 <li><a href="manage-tasks.html">Manage Tasks</a></li>
-                <li><a href="manage-applications.html" class="active">Applications</a></li>
-                <li><a href="#profile">Organization Profile</a></li>
+                <li><a href="manage-applications.html" class="selected">Applications</a></li>
                 <li><a href="login.html">Logout</a></li>
             </ul>
         </nav>
     </section>
 
-    <section class="main-content">
+    <section class="welcome-section">
         <h1>Worker Applications</h1>
         <p>Review applications submitted by independent workers and select the most suitable candidates for your tasks.</p>
-        <section class="filter-section">
+
+        <section class="application-filters">
             <form>
                 <label for="filter-task">Task:</label>
                 <select id="filter-task">
@@ -45,7 +46,7 @@
             </form>
         </section>
 
-        <section class="applications-container">
+        <section class="applications-list">
             <table>
                 <thead>
                     <tr>
@@ -65,7 +66,7 @@
                         <td>5 Years</td>
                         <td>Masonry</td>
                         <td>2026-10-24</td>
-                        <td><span class="status accepted">Accepted</span></td>
+                        <td><span class="application-status status-accepted">Accepted</span></td>
                         <td><button type="button">View Profile</button></td>
                     </tr>
                     <tr>
@@ -74,7 +75,7 @@
                         <td>3 Years</td>
                         <td>Electrical</td>
                         <td>2026-10-25</td>
-                        <td><span class="status pending">Pending Review</span></td>
+                        <td><span class="application-status status-pending">Pending Review</span></td>
                         <td>
                             <button type="button">View Profile</button>
                             <button type="button">Accept</button>
@@ -87,7 +88,7 @@
                         <td>2 Years</td>
                         <td>General Labor</td>
                         <td>2026-10-20</td>
-                        <td><span class="status rejected">Rejected</span></td>
+                        <td><span class="application-status status-rejected">Rejected</span></td>
                         <td><button type="button">View Profile</button></td>
                     </tr>
                 </tbody>

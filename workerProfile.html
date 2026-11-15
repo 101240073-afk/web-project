@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="workerstyle.css">
+    <script src="profile.js" defer></script>
     <title>Worker Profile</title>
 </head>
 <body>
@@ -37,7 +38,7 @@
                     </div>
                     <div class="form-group">
                         <label for="experience">Years of Experience *</label>
-                        <input type="number" id="experience" min="0" max="50" placeholder="e.g., 3" required>
+                        <input type="number" id="experience" min="0" max="20" placeholder="e.g., 3" required>
                     </div>
                 </div>
             </div>
@@ -88,8 +89,10 @@
                     <label for="has-tools">I own my own basic tools & safety equipment</label>
                 </div>
             </div>
-
+            
+            <p id="profileMessage"></p>
             <button type="submit" class="btn-submit">Save Profile & Go to Dashboard</button>
+            
         </form>
     </div>
 

@@ -63,7 +63,7 @@ body {
     align-items: start;
 }
 
-.side-bar {
+.dashboard-sidebar {
     width: 250px;
     min-height: 100vh;
     height: 100%;
@@ -79,7 +79,7 @@ body {
     z-index: 10;
 }
 
-.side-bar::before {
+.dashboard-sidebar::before {
     content: "WORK LINK";
     display: block;
     color: white;
@@ -89,7 +89,7 @@ body {
     padding: 0 25px 8px;
 }
 
-.side-bar::after {
+.dashboard-sidebar::after {
     content: "MANAGEMENT PORTAL";
     display: block;
     color: var(--color-coral);
@@ -99,20 +99,20 @@ body {
     padding: 0 25px 30px;
 }
 
-.side-bar nav {
+.dashboard-sidebar nav {
     width: 100%;
 }
 
-.side-bar nav ul {
+.dashboard-sidebar nav ul {
     list-style: none;
     width: 100%;
 }
 
-.side-bar nav ul li {
+.dashboard-sidebar nav ul li {
     margin: 5px 12px;
 }
 
-.side-bar nav ul li a {
+.dashboard-sidebar nav ul li a {
     display: flex;
     align-items: center;
     padding: 13px 16px;
@@ -125,27 +125,27 @@ body {
     transition: var(--transition);
 }
 
-.side-bar nav ul li a:hover {
+.dashboard-sidebar nav ul li a:hover {
     background: rgba(255, 255, 255, 0.08);
     color: white;
     border-left-color: var(--color-coral);
     padding-left: 20px;
 }
 
-.side-bar nav ul li a.active {
+.dashboard-sidebar nav ul li a.selected {
     background: rgba(228, 119, 99, 0.16);
     color: white;
     border-left-color: var(--color-coral);
 }
 
-.main-content {
+.welcome-section {
     grid-column: 2;
     width: 100%;
     min-width: 0;
     padding: 38px 42px 25px;
 }
 
-.main-content h1 {
+.welcome-section h1 {
     font-size: 1.85rem;
     font-weight: 750;
     color: var(--primary);
@@ -153,14 +153,14 @@ body {
     letter-spacing: -0.5px;
 }
 
-.main-content > p {
+.welcome-section > p {
     color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 28px;
     max-width: 850px;
 }
 
-.stats-row {
+.overview-stats {
     display: grid;
     grid-column: 2;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -169,7 +169,7 @@ body {
     width: 100%;
 }
 
-.stat-card {
+.overview-card {
     background: var(--bg-card);
     padding: 23px 21px;
     border: 1px solid var(--border-color);
@@ -180,12 +180,12 @@ body {
     transition: var(--transition);
 }
 
-.stat-card:hover {
+.overview-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(37, 34, 56, 0.1);
 }
 
-.stat-card::before {
+.overview-card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -195,19 +195,19 @@ body {
     background: var(--color-ink);
 }
 
-.stat-card:nth-child(2)::before {
+.overview-card:nth-child(2)::before {
     background: var(--color-plum);
 }
 
-.stat-card:nth-child(3)::before {
+.overview-card:nth-child(3)::before {
     background: var(--color-coral);
 }
 
-.stat-card:nth-child(4)::before {
+.overview-card:nth-child(4)::before {
     background: #A995A7;
 }
 
-.stat-label {
+.card-label {
     display: block;
     color: var(--text-muted);
     font-size: 0.78rem;
@@ -216,40 +216,40 @@ body {
     letter-spacing: 0.8px;
 }
 
-.stat-value {
+.card-value {
     font-size: 2rem;
     font-weight: 800;
     color: var(--primary);
     margin: 9px 0 3px;
 }
 
-.stat-subtext {
+.card-description {
     font-size: 0.8rem;
     color: var(--text-muted);
 }
 
-.middle-section {
+.recent-tasks {
     padding: 0 42px 42px;
     width: 100%;
     min-width: 0;
     grid-column: 2;
 }
 
-.middle-section h2 {
+.recent-tasks h2 {
     font-size: 1.3rem;
     color: var(--primary);
     margin-bottom: 20px;
     font-weight: 750;
 }
 
-.job-cards-container {
+.tasks-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     width: 100%;
 }
 
-.active-job-card {
+.task-card {
     background: var(--bg-card);
     padding: 25px;
     border: 1px solid var(--border-color);
@@ -260,13 +260,19 @@ body {
     transition: var(--transition);
 }
 
-.active-job-card:hover {
+.task-card:hover {
     transform: translateY(-4px);
     border-color: var(--color-coral);
     box-shadow: 0 12px 25px rgba(37, 34, 56, 0.09);
 }
 
-.job-header {
+.task-card h3 {
+    font-size: 1.15rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.task-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -275,31 +281,26 @@ body {
     margin-bottom: 16px;
 }
 
-.active-job-card h3 {
-    font-size: 1.15rem;
-    color: var(--primary);
-    margin-bottom: 12px;
-}
-
-.job-schedule {
+.task-deadline {
     font-size: 0.78rem;
     color: var(--text-muted);
 }
 
-.job-meta {
+.task-info {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 7px;
 }
 
-.job-description {
+.task-description {
     font-size: 0.9rem;
     color: var(--text-muted);
     margin: 12px 0 20px;
     line-height: 1.6;
 }
 
-.badge, .status {
+.task-status,
+.application-status {
     display: inline-block;
     padding: 5px 12px;
     border-radius: 30px;
@@ -310,35 +311,36 @@ body {
     width: fit-content;
 }
 
-.badge.active, .status.accepted {
+.status-active,
+.status-accepted {
     background: var(--status-active-bg);
     color: var(--status-active-text);
 }
 
-.badge.pending, .status.pending {
+.status-pending {
     background: var(--status-pending-bg);
     color: var(--status-pending-text);
 }
 
-.badge.high {
-    background: var(--status-high-bg);
-    color: var(--status-high-text);
-}
-
-.status.rejected {
+.status-rejected {
     background: var(--status-rejected-bg);
     color: var(--status-rejected-text);
 }
 
-.job-actions {
+.status-completed {
+    background: rgba(76, 175, 80, 0.15);
+    color: #388E3C;
+}
+
+.task-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: auto;
 }
 
-.btn-primary,
-.active-job-card button {
+.action-primary,
+.task-card button {
     background: var(--primary);
     color: white;
     border: none;
@@ -350,13 +352,13 @@ body {
     transition: var(--transition);
 }
 
-.btn-primary:hover,
-.active-job-card button:hover {
+.action-primary:hover,
+.task-card button:hover {
     background: var(--accent);
     transform: translateY(-2px);
 }
 
-.btn-secondary {
+.action-secondary {
     background: var(--color-peach);
     color: var(--primary);
     border: 1px solid transparent;
@@ -368,12 +370,12 @@ body {
     transition: var(--transition);
 }
 
-.btn-secondary:hover {
+.action-secondary:hover {
     background: var(--color-plum);
     color: white;
 }
 
-.form-container {
+.task-form-container {
     background: var(--bg-card);
     padding: 30px;
     border: 1px solid var(--border-color);
@@ -391,7 +393,7 @@ form {
     width: 100%;
 }
 
-.form-section {
+.task-form-section {
     background: var(--bg-soft);
     padding: 24px;
     border: 1px solid var(--border-color);
@@ -399,7 +401,7 @@ form {
     margin-bottom: 5px;
 }
 
-.form-section h2 {
+.task-form-section h2 {
     font-size: 1.05rem;
     color: var(--primary);
     padding-bottom: 12px;
@@ -407,7 +409,7 @@ form {
     border-bottom: 1px solid var(--border-color);
 }
 
-.form-group {
+.task-form-group {
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -453,13 +455,13 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(228, 119, 99, 0.15);
 }
 
-.input-row {
+.form-row {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
 
-.btn-submit {
+.publish-button {
     background: var(--color-coral);
     color: white;
     border: none;
@@ -471,13 +473,14 @@ textarea:focus {
     transition: var(--transition);
 }
 
-.btn-submit:hover {
+.publish-button:hover {
     background: var(--color-plum);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(228, 119, 99, 0.2);
 }
 
-.filter-section {
+.task-filters,
+.application-filters {
     background: var(--bg-card);
     padding: 22px;
     border: 1px solid var(--border-color);
@@ -486,18 +489,21 @@ textarea:focus {
     margin-bottom: 25px;
 }
 
-.filter-section form {
+.task-filters form,
+.application-filters form {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 14px;
     align-items: end;
 }
 
-.filter-section label {
+.task-filters label,
+.application-filters label {
     margin-bottom: 0;
 }
 
-.filter-section button {
+.task-filters button,
+.application-filters button {
     background: var(--primary);
     color: white;
     border: none;
@@ -509,11 +515,13 @@ textarea:focus {
     transition: var(--transition);
 }
 
-.filter-section button:hover {
+.task-filters button:hover,
+.application-filters button:hover {
     background: var(--accent);
 }
 
-.applications-container {
+.applications-list,
+.tasks-list {
     background: var(--bg-card);
     width: 100%;
     overflow-x: auto;
@@ -579,17 +587,74 @@ table button:hover {
     color: white;
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 25px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.modal-buttons button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#cancel-close {
+    background-color: #e5e5e5;
+}
+
+#confirm-close {
+    background-color: #49364F;
+    color: white;
+}
+
+
 @media (max-width: 1100px) {
-    .stats-row {
+    .overview-stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .main-content {
+    .welcome-section {
         padding: 30px 25px 20px;
     }
 
-    .stats-row,
-    .middle-section {
+    .overview-stats,
+    .recent-tasks {
         padding-left: 25px;
         padding-right: 25px;
     }
@@ -601,7 +666,7 @@ table button:hover {
         flex-direction: column;
     }
 
-    .side-bar {
+    .dashboard-sidebar {
         width: 100%;
         min-height: auto;
         height: auto;
@@ -609,117 +674,194 @@ table button:hover {
         padding: 15px 12px;
     }
 
-    .side-bar::before {
+    .dashboard-sidebar::before {
         padding: 0 12px 5px;
     }
 
-    .side-bar::after {
+    .dashboard-sidebar::after {
         padding: 0 12px 15px;
     }
 
-    .side-bar nav ul {
+    .dashboard-sidebar nav ul {
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
     }
 
-    .side-bar nav ul li {
+    .dashboard-sidebar nav ul li {
         margin: 0;
     }
 
-    .side-bar nav ul li a {
+    .dashboard-sidebar nav ul li a {
         padding: 9px 11px;
         font-size: 0.82rem;
         border-left: none;
         border-bottom: 2px solid transparent;
     }
 
-    .side-bar nav ul li a:hover,
-    .side-bar nav ul li a.active {
+    .dashboard-sidebar nav ul li a:hover,
+    .dashboard-sidebar nav ul li a.selected {
         border-left: none;
         border-bottom-color: var(--color-coral);
         padding-left: 11px;
     }
 
-    .main-content {
+    .welcome-section {
         padding: 25px 17px 15px;
     }
 
-    .main-content h1 {
+    .welcome-section h1 {
         font-size: 1.5rem;
     }
 
-    .stats-row {
+    .overview-stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         padding: 10px 17px 25px;
         gap: 12px;
     }
 
-    .stat-card {
+    .overview-card {
         padding: 17px;
     }
 
-    .stat-value {
+    .card-value {
         font-size: 1.6rem;
     }
 
-    .middle-section {
+    .recent-tasks {
         padding: 0 17px 30px;
     }
 
-    .form-container {
+    .task-form-container {
         padding: 18px;
     }
 
-    .form-section {
+    .task-form-section {
         padding: 18px;
     }
 
-    .input-row {
+    .form-row {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
-    .filter-section form {
+    .task-filters form,
+    .application-filters form {
         grid-template-columns: 1fr;
     }
 
-    .job-cards-container {
+    .tasks-container {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    .stats-row {
+    .overview-stats {
         grid-template-columns: 1fr;
     }
 
-    .main-content {
+    .welcome-section {
         padding: 22px 14px 12px;
     }
 
-    .middle-section {
+    .recent-tasks {
         padding: 0 14px 25px;
     }
 
-    .stats-row {
+    .overview-stats {
         padding-left: 14px;
         padding-right: 14px;
     }
 
-    .job-actions {
+    .task-actions {
         flex-direction: column;
     }
 
-    .job-actions button {
+    .task-actions button {
         width: 100%;
     }
 
-    .form-container {
+    .task-form-container {
         padding: 13px;
     }
 
-    .form-section {
+    .task-form-section {
         padding: 15px;
+    }
+}
+.profile-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 34, 56, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-content {
+    position: relative;
+    background: var(--color-porcelain);
+    width: 450px;
+    max-width: 100%;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: profileAppear 0.3s ease;
+}
+
+.profile-content h2 {
+    color: var(--color-ink);
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-details p {
+    color: var(--color-ink);
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.profile-details strong {
+    color: var(--color-plum);
+}
+
+.close-profile {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--color-ink);
+    cursor: pointer;
+}
+
+.close-profile:hover {
+    color: var(--color-coral);
+}
+
+@keyframes profileAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

@@ -1,6 +1,3 @@
-
-/* View Accepted Application Details */
-
 let detailsButtons = document.querySelectorAll(".btn-details");
 
 detailsButtons.forEach(function(button) {
